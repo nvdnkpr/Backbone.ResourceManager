@@ -25,7 +25,7 @@ Download the [production version][min] or the [development version][max].
 ## Documentation
 
 ### Backbone.rm
-After including the ResourceManager, you will find all constructors, Mixins, and base classes within the Backbone.rm namespace.  Aside from this namespace, the only other footprint left by the ResourceManager is the addition of the _rmInclude function to the Backbone.[View|Model|Collection|Router] objects
+After including the ResourceManager, you will find all constructors, Mixins, and base classes within the Backbone.rm namespace.  Aside from this namespace, the only other footprint left by the ResourceManager is the addition of the _rmInclude function to the Backbone.[ View | Model | Collection | Router ] objects
 
 ## Usage
 
@@ -47,11 +47,11 @@ Or if you don't want to alter a pre-existing inheritance schema, just use the mi
         @_rmInclude Mixin
         name: 'form'
         And so on...
-        
+
 
 ### View
 
-There's nothing too special about how to set up a View, but notice that you now have a deferred initilialization hook as well as a default render context that's auto-magically populated with a data object that contains your dependencies' data namespaced accordingly.
+There's nothing too special about how to set up a View, but notice that you now have a deferred initilialization hook as well as a default render context that's auto-magically populated with a data object that contains your dependencies' data, namespaced accordingly.
 
 
     define 'views.WorkspaceView'
