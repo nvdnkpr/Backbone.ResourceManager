@@ -25,7 +25,7 @@ Download the [production version][min] or the [development version][max].
 ## Documentation
 
 ### Backbone.rm
-After including the ResourceManager, you will find all constructors, Mixins, and base classes within the Backbone.rm namespace.  Aside from this namespace, the only other footprint left by the ResourceManager is the addition of the _rmInclude function to the Backbone.[ View | Model | Collection | Router ] objects
+After including the ResourceManager, you will find all constructors, mixins, and base-classes within the Backbone.rm namespace.  Aside from this namespace, the only other footprint left by the ResourceManager is the addition of the _rmInclude function to the Backbone.[ View | Model | Collection | Router ] objects
 
 ## Usage
 
