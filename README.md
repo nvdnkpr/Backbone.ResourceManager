@@ -99,7 +99,7 @@ There's nothing too special about how to set up a View, but notice that you now 
 
 ### Initialization
 
-You can initialize all of your managed views during initialization, in which case the deferred dependency resolution and rendering function will be called automatically.
+You can initialize all of your managed views using the ResourceManager initialization function, in which case the deferred dependency resolution and appropriate rendering functions will be called automatically on each configured view:
 
     require [
       'Backbone.rm.ResourceManager'
