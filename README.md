@@ -4,13 +4,12 @@
  / , _/ -_|_-</ _ \/ // / __/ __/ -_) / /|_/ / _ `/ _ \/ _ `/ _ `/ -_) __/
 /_/|_|\__/___/\___/\_,_/_/  \__/\__/ /_/  /_/\_,_/_//_/\_,_/\_, /\__/_/   
                                                            /___/          
- 
 Managed data dependencies for your Backbone Views
 
 ```
 
 ## What is ResourceManager?
-ResourceManager is a set of [Backbone](http://backbonejs.org/) view, model, and collection mixins that leverage [Deferred Objects](http://api.jquery.com/category/deferred-object/) to simplify the coordination and rendering of Views that depend on Models/Collections bound to data from multiple endpoints.  
+ResourceManager is a set of [Backbone](http://backbonejs.org/) view, model, and collection mixins that leverage [Deferred Objects](http://api.jquery.com/category/deferred-object/) to simplify the rendering of Views that depend on the coordinated population of multiple Models and/or Collections. 
 
 ResourceManager also provides a client-side caching interface that maintains a simple in-memory store by default, providing caching for Backbone's sync operations, but can be swapped out for a caching library of your choice.  For example, [Burry](https://github.com/ggozad/burry.js) would work nicely if you wanted to use localStorage.
 
