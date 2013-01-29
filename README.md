@@ -32,7 +32,7 @@ After including the ResourceManager, you will find all constructors, mixins, and
 
 Define your Managed models/collections by inheriting from the rm.ManagedModel/rm.ManagedCollection classes
 
-    define 'hubspot.forms.models.Form', ['jQuery', 'Backbone.rm.ManagedModel'], ($, Model) ->
+    define 'models.Form', ['jQuery', 'Backbone.rm.ManagedModel'], ($, Model) ->
       class Form extends ManagedModel
         name: 'form'  # All managed Models/Collections must have a name
         url: -> "/forms/#{@id}"  # Define a url statically or as a function, as per usual
@@ -41,7 +41,7 @@ Define your Managed models/collections by inheriting from the rm.ManagedModel/rm
 
 Or if you don't want to alter a pre-existing inheritance schema, just use the mixins...
 
-    define 'hubspot.forms.models.Form', ['jQuery', 'Backbone.Model', 'Backbone.rm.ManagedModelMixin'], ($, Model, Mixin) ->
+    define 'models.Form', ['jQuery', 'Backbone.Model', 'Backbone.rm.ManagedModelMixin'], ($, Model, Mixin) ->
       class Form extends Model
         @_rmInclude Mixin
         name: 'form'
@@ -56,7 +56,7 @@ There's nothing too special about how to set up a View, but notice that you now 
     define 'views.WorkspaceView'
     ,['jQuery'
       'Backbone.rm.ManagedView'
-      'hubspot.forms.collections.Fields']
+      'collections.Fields']
     ,($, ResourceManager, ManagedView) ->
       class WorkspaceView extends ManagedView
         el: '#workspace-view'
@@ -103,16 +103,16 @@ You can initialize all of your managed views using the ResourceManager initializ
     require [
       'Backbone.rm.ResourceManager'
       'views.WorkspaceView'
-      'hubspot.models.Form'
-      'hubspot.collections.Properties'
+      'models.Form'
+      'collections.Properties'
     ],(View, ResourceManager, WorkspaceView, Form Properties) ->
       ResourceManager.init
         configs:
           workspace:
             view: WorkspaceView
             deps: [
-              {class: hubspot.forms.models.Form, id:hubspot.forms.formId}
-              {class: hubspot.forms.collections.Properties}
+              {class: Form, id:formId}
+              {class: Properties}
             ]
 
 Or, you can add/render the views separately in case you don't want to render the view automatically upon deferred initialization:
@@ -120,8 +120,8 @@ Or, you can add/render the views separately in case you don't want to render the
     require [
       'Backbone.rm.ResourceManager'
       'views.WorkspaceView'
-      'hubspot.models.Form'
-      'hubspot.collections.Properties'
+      'models.Form'
+      'collections.Properties'
     ],(View, ResourceManager, WorkspaceView, Form, Properties) ->
       ResourceManager.init()
 
@@ -130,8 +130,8 @@ Or, you can add/render the views separately in case you don't want to render the
         workspace:
           view: WorkspaceView
           deps: [
-            {class: hubspot.forms.models.Form, id:hubspot.forms.formId}
-            {class: hubspot.forms.collections.Properties}
+            {class: Form, id:formId}
+            {class: Properties}
           ]
 
       # .
