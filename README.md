@@ -141,7 +141,7 @@ Or, you can add/render the views separately in case you don't want to render the
       # .
 
       # Finally, render views
-      for dfd of viewDeferreds
+      for dfd in viewDeferreds
         dfd.deferredRender() 
 
 
